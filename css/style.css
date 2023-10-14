@@ -1,0 +1,224 @@
+/* Define the grid container */
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #090c08;
+}
+
+.wrapper {
+    min-height: 100%;
+    display: grid;
+    margin: 0;
+    padding: 0;
+
+    grid-template-areas:
+        "a "
+        "b "
+        "c "
+        "d "
+        "e ";
+
+    grid-template-columns: 1fr;
+    grid-template-rows: 125px calc(100vh-125px) 0.2vh 0.2vh 125px;
+}
+
+/* Define the grid items */
+
+.wrapper > .header-bar {
+    grid-area: a;
+    background-color: #3ab795;
+    height: 125px;
+}
+
+.wrapper > .header-bar > h1 {
+    margin: 0;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 30px;
+    text-align: center;
+    font-size: 3em;
+    color: white;
+    font-family: 'Arvo', serif;
+}
+
+.wrapper > .first-row {
+    grid-area: b;
+    position: relative;
+}
+
+.wrapper > .first-row > img{
+    width: 100%;
+    height: calc(100vh - 125px);
+    object-fit: cover;
+}
+
+.wrapper > .first-row > .hello {
+    position: absolute;
+    bottom: 65%;
+    width: 100%;
+    left: 0;
+}
+
+.wrapper > .first-row > .hello > h1 {
+    /* place text over image */
+    margin: 0;
+    font-size: 7em;
+    text-align: center;
+    width: 100%;
+    color: white;
+    font-family: 'Arvo', serif;
+    position: absolute;
+    display: inline-block;
+    white-space: nowrap;
+
+}
+
+.wrapper > .first-row > .hello > h2 {
+    /* place text over image */
+    top: calc(100% + 120px);  /* this ensures h2 starts right where h1 ends */
+    width: 100%;  /* allow it to take full width for better responsiveness */
+    margin: 0;
+    font-size: 4em;
+    text-align: center;
+    color: white;
+    font-family: 'Arvo', serif;
+    position: absolute;
+    display: inline-block;
+    white-space: nowrap;
+
+}
+
+.wrapper > .second-row {
+    grid-area: c;
+    background-color: #090c08;
+    height: 100vh;
+}
+
+.wrapper > .second-row > h1 {
+    margin: 0;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 30px;
+    text-align: left;
+    font-size: 6em;
+    color: white;
+    font-family: 'Arvo', serif;
+}
+
+.wrapper > .second-row > p {
+    margin: 0;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 30px;
+    text-align: center;
+    font-size: 3em;
+    color: white;
+    font-family: 'Arvo', serif;
+    text-align: left;
+}
+
+.wrapper > .third-row {
+    grid-area: d;
+    background-color: #090c08;
+    height: 100vh;
+    position: relative;
+}
+
+.wrapper > .third-row > img{
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+}
+
+.wrapper > .third-row > h1 {
+    margin: 0;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 30px;
+    text-align: center;
+    font-size: 6em;
+    color: white;
+    font-family: 'Arvo', serif;
+    position: absolute;  /* Keeps it as absolute */
+    top: 40%;  /* Center it vertically */
+    left: 50%;  /* Center it horizontally */
+    transform: translate(-50%, -50%);  /* Adjust the position so it's perfectly centered */
+    white-space: nowrap;
+}
+
+.wrapper > .third-row > p {
+    margin: 0;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 30px;
+    text-align: center;
+    font-size: 2.5em;
+    color: white;
+    font-family: 'Arvo', serif;
+    position: absolute;  /* Keeps it as absolute */
+    top: 50%;  /* Center it vertically */
+    left: 50%;  /* Center it horizontally */
+    transform: translate(-50%, -50%);  /* Adjust the position so it's perfectly centered */
+    white-space: nowrap;
+}
+
+.wrapper > .third-row > a {
+    margin: 0;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 30px;
+    text-align: center;
+    font-size: 5em;
+    color: white;
+    font-family: 'Arvo', serif;
+    position: absolute;  /* Keeps it as absolute */
+    top: 60%;  /* Center it vertically */
+    left: 50%;  /* Center it horizontally */
+    transform: translate(-50%, -50%);  /* Adjust the position so it's perfectly centered */
+    white-space: nowrap;
+}
+
+.wrapper > .foot {
+    height: 125px;
+    grid-area: e;
+    background-color: #090c08;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.wrapper > .foot > p {
+    margin: 0;
+    text-align: center;
+    font-size: 1.5em;
+    color: white;
+    font-family: 'Arvo', serif;
+}
+
+@media (max-width: 1680px) {
+    .wrapper > .first-row > .hello > h1 {
+        font-size: 4em;
+    }
+
+    .wrapper > .first-row > .hello > h2 {
+        font-size: 3.5em;
+    }
+
+    .wrapper > .second-row > h1 {
+        font-size: 5em;
+    }
+}
+
+@media (max-width: 960px) {
+    .wrapper > .first-row > .hello > h1 {
+        font-size: 3em;
+    }
+
+    .wrapper > .first-row > .hello > h2 {
+        font-size: 2.5em;
+    }
+
+    .wrapper > .second-row > p {
+        font-size: 1.75em;
+    }
+}
